@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.titulo{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.corto{
+    text-align: center;
+}
+.corto h1{
+    margin-top: 1rem;
+}
+.corto span{
+    color: grey;
+}
+
+.largo{
+    display: none;
+}
+.navegacion{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+@media screen and (min-width: 768px){
+    .corto{
+        display: none;
+    }
+    .largo{
+        display:block;
+    }
+    .desplegable{
+        display:none;
+    }
+}
+@media screen and (max-width:768px){
+    .desplegable{
+        position: relative;
+        left: 20px;
+        bottom: 33px;
+        height: 55px;
+        cursor: pointer;
+        width: 100%;
+        font-size: x-large;
+    }
+
+}
