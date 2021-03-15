@@ -1,7 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  *{
+    font-size: x-large;
+  }
 }
 a {
   color: black;
@@ -29,6 +35,10 @@ a {
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
+  z-index: 1;
+  position: absolute;
+  background-color: white;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
   .encabezado {
@@ -55,9 +65,10 @@ a {
     width: 60%;
     justify-content: space-around;
     align-items: center;
+    position: relative;
   }
   .Contacto {
-    background-color: rgb(25, 25, 102);
+    background-color: rgb(32, 54, 127);
     color: white;
     padding: 0.8rem;
     border-radius: 1rem;
@@ -84,7 +95,7 @@ a {
   width: 100%;
   height: 50%;
 }
-.fondo-color{
+.fondo-color {
   background-color: rgb(243, 241, 241);
 }
 .card {
@@ -93,7 +104,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  background-color: rgba(25, 25, 102, 0.897);
+  background-color: rgba(32, 54, 127, 0.897);
   padding: 1rem;
   width: 80%;
   display: flex;
@@ -214,14 +225,14 @@ a {
   }
 }
 
-.integrantes{
+.integrantes {
   display: flex;
   flex-direction: column;
   width: 90%;
   margin: auto;
 }
 
-.integrantes img{
+.integrantes img {
   object-fit: cover;
   width: 100%;
   height: 15rem;
@@ -230,37 +241,38 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-    .integrantes{
-      flex-direction: row;
-      justify-content: space-around;
-    }
-    .integrantes img{
-      width: 30%;
-    }
+  .integrantes {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .integrantes img {
+    width: 30%;
+  }
 }
 
-.our-proyects{
+.our-proyects {
   padding-top: 2rem;
   width: 90%;
   margin: auto;
   text-align: center;
 }
 
-.our-proyects-texto{
+.our-proyects-texto {
   margin-bottom: 2rem;
 }
 
-.our-proyects-texto h4 , p{
+.our-proyects-texto h4,
+p {
   margin-bottom: 1rem;
 }
 
-.our-proyects-numero span{
+.our-proyects-numero span {
   color: rgb(129, 129, 100);
   font-size: 4rem;
 }
 
 @media screen and (min-width: 768px) {
-  .our-proyects{
+  .our-proyects {
     width: 80%;
     margin: auto;
     display: flex;
@@ -268,16 +280,16 @@ a {
     justify-content: space-around;
     align-items: center;
   }
-  .our-proyects-texto{
+  .our-proyects-texto {
     width: 50%;
     margin-bottom: 0;
   }
-  .our-proyects-numero span{
-    font-size:6rem;
+  .our-proyects-numero span {
+    font-size: 6rem;
   }
 }
 
-.send-request-img{
+.send-request-img {
   display: none;
 }
 .send-request-text {
@@ -285,7 +297,7 @@ a {
   z-index: 5;
   width: 100%;
   height: 15rem;
-  color: #FFF;
+  color: #fff;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -294,33 +306,158 @@ a {
 }
 
 .send-request-text::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image:linear-gradient(rgba(25, 25, 102, 0.897),rgba(25, 25, 102, 0.897)),url('../img/people-walking.jpg');
-    opacity: .7;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 100%;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+      rgba(32, 54, 127, 0.897),
+      rgba(32, 54, 127, 0.897)
+    ),
+    url("../img/people-walking.jpg");
+  opacity: 0.7;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .send-request{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+  .send-request {
+    display: flex;
   }
-  .send-request-img{ 
-    display: block;
-    grid-column: 1 / 2;
+  .send-request-img {
+    display: flex;
+    flex: 1;
   }
-  .send-request-text{ 
-    grid-column: 2 / 2;
+  .send-request-text {
+    flex: 1;
+    height: 20rem;
   }
-  
+
+  .send-request-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 20rem;
+  }
+}
+
+.septic-system {
+  margin-top: 2rem;
+}
+
+.septic-system-img {
+  display: none;
+}
+
+.septic-system-text {
+  background-color: rgb(32, 54, 127);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 1rem;
+  align-items: center;
+}
+.septic-system-text h4 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.free-consultation {
+  font-weight: bold;
+  padding-top: 0.7rem;
+}
+
+.septic-system-text p {
+  width: 90%;
+  margin: auto;
+  padding-top: 0.4rem;
+  padding-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+}
+.form input {
+  margin-bottom: 1rem;
+  background-color: rgb(32, 54, 127);
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 0.4rem;
+  width: 80%;
+  text-align: center;
+}
+
+.form [type="submit"] {
+  background-color: rgb(129, 129, 100);
+  width: 45%;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  font-size: large;
+}
+
+input.error {
+  border: 1px solid red;
+  font-weight: 300;
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .septic-system {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .septic-system-img {
+    display: flex;
+    flex: 1;
+  }
+  .septic-system-img img {
+    object-fit: cover;
+    height: 33rem;
+    width: 100%;
+  }
+
+  .septic-system-text {
+    flex: 1;
+  }
+}
+
+.our-clients {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding-top: 2rem;
+}
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+.clients img {
+  display: block;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  width: 30%;
+  height: 5rem;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+
+  .our-clients h4{
+    margin-bottom: 1rem;
+  }
+
+  .clients img {
+    padding-bottom: 2rem;
+  }
 }

@@ -13,4 +13,18 @@ $(document).ready(function(){
             $(".navegacion").hide();
         }
     });
+
+    $('#form').validate({
+        messages : {
+            name: {
+              required: "",
+            },
+            email: {
+                required: "",
+            },
+            phone: {
+                required: ""
+            }
+        }
+    });
 });
